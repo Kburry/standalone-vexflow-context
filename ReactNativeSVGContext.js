@@ -119,6 +119,11 @@ export class ReactNativeSVGContext extends SVGContext {
     if (element.svgElementType === 'path') {
       delete element.props['x'];
       delete element.props['y'];
+      delete element.props['strokeWidth'];
+    }
+    
+    if (element.svgElementType === 'rect') {
+      delete element.props['strokeWidth'];
     }
 
     return React.createElement(
